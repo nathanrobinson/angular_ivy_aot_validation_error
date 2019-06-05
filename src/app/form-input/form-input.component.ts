@@ -35,9 +35,9 @@ export class FormInputComponent implements OnInit, OnChanges, AfterContentInit {
     this.inputControl.valueChanges.subscribe(value =>
       this.valueChange.emit(value),
     );
-    // this.inputControl.setValue(this.value, { emitEvent: false });
-    // this.inputControl.markAsPristine();
-    // this._addFormControlToGroup();
+    this.inputControl.setValue(this.value, { emitEvent: false });
+    this.inputControl.markAsPristine();
+    this._addFormControlToGroup();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -59,13 +59,22 @@ export class FormInputComponent implements OnInit, OnChanges, AfterContentInit {
       Validators.required,
     ]);
     setTimeout(() => {
-      this.required = "";
-      this.max = 150;
-      this.maxLength = 15;
-      this.minLength = 5;
-      this.min = 0;
-      this.pattern = /^[\w\d]*$/;
-    }, 555);
+      this.required = undefined;
+      this.max = undefined;
+      this.maxLength = undefined;
+      this.minLength = undefined;
+      this.min = undefined;
+      this.pattern = undefined;
+
+      setTimeout(() => {
+        this.required = "";
+        this.max = 150;
+        this.maxLength = 15;
+        this.minLength = 5;
+        this.min = 0;
+        this.pattern = /^[\w\d]*$/;
+      }, 10);
+    }, 10);
   }
 
   private _addFormControlToGroup() {

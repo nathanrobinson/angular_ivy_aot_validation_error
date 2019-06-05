@@ -1,6 +1,5 @@
-<mat-form-field>
-  <input matInput
-         [placeholder]="placeholder"
+<div>
+  <input [placeholder]="placeholder"
          [name]="name"
          [formControl]="inputControl"
          type="text"
@@ -10,7 +9,7 @@
          [minlength]="minLength"
          [maxlength]="maxLength"
          [pattern]="pattern" />
-  <mat-error>
+  <div>
     {{inputControl.valid}} : {{inputControl.errors | json}}
-  </mat-error>
-</mat-form-field>
+  </div>
+</div>
