@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterContentInit } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-root",
@@ -12,6 +11,11 @@ export class AppComponent implements OnInit, AfterContentInit {
   textValue2: string = "test 321 ///!";
   textValue3: string = "test";
   textValue4: string;
+
+  minLength = 5;
+  maxLength = 15;
+  required = '';
+  pattern = /^[\w\d]*$/;
 
   ngOnInit(): void {}
 

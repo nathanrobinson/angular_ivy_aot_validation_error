@@ -1,32 +1,38 @@
-<mat-card>
-    <mat-card-title>
+<div>
+    <div class="title">
         <mat-toolbar class="mat-primary">{{title}}</mat-toolbar>
-    </mat-card-title>
-    <mat-card-content>
-        <form #myForm="ngForm">
-            <app-form-input [parentFormGroup]="myForm"
-                            placeholder="Enter the first value"
-                            name="text1"
-                            [(value)]="textValue"></app-form-input>
+    </div>
+    <div class="content">
+        <form>
+            <input placeholder="Enter the first value"
+                   name="text1"
+                   [(ngModel)]="textValue"
+                   type="text"
+                   minlength="5"
+                   maxlength="15"
+                   pattern="[\w\d]*"
+                   required />
             <div class="display-right">{{textValue}}</div>
-            <mat-divider></mat-divider>
-            <app-form-input [parentFormGroup]="myForm"
-                            placeholder="Enter the second value"
-                            name="text2"
-                            [(value)]="textValue2"></app-form-input>
+            <div></div>
+            <input placeholder="Enter the second value"
+                   name="text2"
+                   [(ngModel)]="textValue2"
+                   type="text"
+                   [minlength]="minLength"
+                   [maxlength]="maxLength"
+                   [pattern]="pattern"
+                   [required]="required" />
             <div class="display-right">{{textValue2}}</div>
-            <mat-divider></mat-divider>
-            <app-form-input [parentFormGroup]="myForm"
-                            placeholder="Enter the third value"
+            <div></div>
+            <app-form-input placeholder="Enter the third value"
                             name="text3"
                             [(value)]="textValue3"></app-form-input>
             <div class="display-right">{{textValue3}}</div>
-            <mat-divider></mat-divider>
-            <app-form-input [parentFormGroup]="myForm"
-                            placeholder="Enter the fourth value"
+            <div></div>
+            <app-form-input placeholder="Enter the fourth value"
                             name="text4"
                             [(value)]="textValue4"></app-form-input>
             <div class="display-right">{{textValue4}}</div>
         </form>
-    </mat-card-content>
-</mat-card>
+    </div>
+</div>

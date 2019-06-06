@@ -1,15 +1,11 @@
 <div>
   <input [placeholder]="placeholder"
          [name]="name"
-         [formControl]="inputControl"
+         [(ngModel)]="value"
+         (ngModelChange)="valueChange.emit($event)"
          type="text"
          [required]="required"
-         [min]="min"
-         [max]="max"
          [minlength]="minLength"
          [maxlength]="maxLength"
          [pattern]="pattern" />
-  <div>
-    {{inputControl.valid}} : {{inputControl.errors | json}}
-  </div>
 </div>
