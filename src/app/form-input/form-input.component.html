@@ -1,11 +1,9 @@
-<div>
-  <input [placeholder]="placeholder"
-         [name]="name"
-         [(ngModel)]="value"
-         (ngModelChange)="valueChange.emit($event)"
-         type="text"
-         [required]="required"
-         [minlength]="minLength"
-         [maxlength]="maxLength"
-         [pattern]="pattern" />
-</div>
+<input [placeholder]="placeholder"
+       [name]="name"
+       [(ngModel)]="value"
+       (ngModelChange)="valueChange.emit($event)"
+       type="text"
+       [required]="required"
+       [minlength]="minLength"
+       [maxlength]="maxLength"
+       [pattern]="pattern" />
